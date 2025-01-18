@@ -1,9 +1,15 @@
 C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/CMakeFiles/appmodules.dir
 C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/CMakeFiles/edit_cache.dir
 C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/CMakeFiles/rebuild_cache.dir
+C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/react_codegen_rngesturehandler_codegen.dir
+C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/rngesturehandler_codegen_autolinked_build/CMakeFiles/rebuild_cache.dir
 C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/safeareacontext_autolinked_build/CMakeFiles/react_codegen_safeareacontext.dir
 C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/safeareacontext_autolinked_build/CMakeFiles/edit_cache.dir
 C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/safeareacontext_autolinked_build/CMakeFiles/rebuild_cache.dir
 C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/rnscreens_autolinked_build/CMakeFiles/react_codegen_rnscreens.dir
 C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/rnscreens_autolinked_build/CMakeFiles/edit_cache.dir
 C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/rnscreens_autolinked_build/CMakeFiles/rebuild_cache.dir
+C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/react_codegen_RNVectorIconsSpec.dir
+C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/edit_cache.dir
+C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/x86_64/RNVectorIconsSpec_autolinked_build/CMakeFiles/rebuild_cache.dir

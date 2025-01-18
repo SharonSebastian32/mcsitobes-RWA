@@ -44,8 +44,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
+  include("C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/arm64-v8a/rngesturehandler_codegen_autolinked_build/cmake_install.cmake")
   include("C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/arm64-v8a/safeareacontext_autolinked_build/cmake_install.cmake")
   include("C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/arm64-v8a/rnscreens_autolinked_build/cmake_install.cmake")
+  include("C:/Projects/Mcsitobes/android/app/.cxx/Debug/6i6s1134/arm64-v8a/RNVectorIconsSpec_autolinked_build/cmake_install.cmake")
 
 endif()
 

@@ -1,5 +1,4 @@
-// screens/WalletScreen.js
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import {
   View,
   Text,
@@ -8,6 +7,7 @@ import {
   TouchableOpacity,
   TextInput,
   KeyboardAvoidingView,
+  RefreshControl,
 } from 'react-native';
 
 const wallets = [
@@ -36,22 +36,33 @@ const wallets = [
 
 const WalletScreen = ({navigation}) => {
   const [searchText, setSearchText] = useState('');
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   const filteredWallets = wallets.filter(wallet =>
     wallet.name.toLowerCase().includes(searchText.toLowerCase()),
   );
 
-  const renderWalletItem = ({item}) => (
-    <TouchableOpacity
-      style={styles.walletCard}
-      onPress={() => navigation.navigate('Details', {wallet: item})}>
-      <Text style={styles.icon}>{item.icon}</Text>
-      <View style={styles.walletInfo}>
-        <Text style={styles.walletName}>{item.name}</Text>
-        <Text style={styles.walletAddress}>{item.address}</Text>
-        <Text style={styles.walletBalance}>{item.balance}</Text>
-      </View>
-    </TouchableOpacity>
+  const onRefresh = useCallback(() => {
+    setIsRefreshing(true);
+    setTimeout(() => {
+      setIsRefreshing(false);
+    }, 3000);
+  }, []);
+
+  const renderWalletItem = useCallback(
+    ({item}) => (
+      <TouchableOpacity
+        style={styles.walletCard}
+        onPress={() => navigation.navigate('Details', {wallet: item})}>
+        <Text style={styles.icon}>{item.icon}</Text>
+        <View style={styles.walletInfo}>
+          <Text style={styles.walletName}>{item.name}</Text>
+          <Text style={styles.walletAddress}>{item.address}</Text>
+          <Text style={styles.walletBalance}>{item.balance}</Text>
+        </View>
+      </TouchableOpacity>
+    ),
+    [navigation],
   );
 
   return (
@@ -67,6 +78,14 @@ const WalletScreen = ({navigation}) => {
         data={filteredWallets}
         renderItem={renderWalletItem}
         keyExtractor={item => item.id}
+        ListEmptyComponent={() => (
+          <View style={styles.emptyList}>
+            <Text style={styles.emptyListText}>Wallet not found</Text>
+          </View>
+        )}
+        refreshControl={
+          <RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} />
+        }
       />
     </KeyboardAvoidingView>
   );
@@ -96,6 +115,8 @@ const styles = StyleSheet.create({
   walletName: {fontSize: 18, fontWeight: 'bold'},
   walletAddress: {color: '#666', marginVertical: 4},
   walletBalance: {fontSize: 16, color: '#2ecc71', fontWeight: '500'},
+  emptyList: {flex: 1, justifyContent: 'center', alignItems: 'center'},
+  emptyListText: {fontSize: 18, color: '#666'},
 });
 
 export default WalletScreen;
