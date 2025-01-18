@@ -13,8 +13,7 @@ ios/Pods/
 # Watchman
 .watchmanconfig
 
-# Expo
-.expo/
+ 
 
 # React Native cache
 .react-native/

@@ -1,6 +1,14 @@
 // screens/WalletScreen.js
-import React from 'react';
-import {View, Text, FlatList, StyleSheet, TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {
+  View,
+  Text,
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+  TextInput,
+  KeyboardAvoidingView,
+} from 'react-native';
 
 const wallets = [
   {
@@ -27,6 +35,12 @@ const wallets = [
 ];
 
 const WalletScreen = ({navigation}) => {
+  const [searchText, setSearchText] = useState('');
+
+  const filteredWallets = wallets.filter(wallet =>
+    wallet.name.toLowerCase().includes(searchText.toLowerCase()),
+  );
+
   const renderWalletItem = ({item}) => (
     <TouchableOpacity
       style={styles.walletCard}
@@ -41,20 +55,34 @@ const WalletScreen = ({navigation}) => {
   );
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container} behavior="padding">
       <Text style={styles.header}>My Wallets</Text>
+      <TextInput
+        style={styles.searchBar}
+        placeholder="Search Wallets"
+        value={searchText}
+        onChangeText={setSearchText}
+      />
       <FlatList
-        data={wallets}
+        data={filteredWallets}
         renderItem={renderWalletItem}
         keyExtractor={item => item.id}
       />
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: '#fff', padding: 16},
   header: {fontSize: 24, fontWeight: 'bold', marginBottom: 20},
+  searchBar: {
+    height: 45,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    marginBottom: 16,
+    paddingHorizontal: 16,
+    borderRadius: 50,
+  },
   walletCard: {
     flexDirection: 'row',
     padding: 16,
