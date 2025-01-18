@@ -1,9 +1,15 @@
 // screens/WalletDetailScreen.js
-import React from 'react';
+import React, {useCallback} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {Clipboard} from 'react-native';
 
 const WalletDetailScreen = ({route}) => {
   const {wallet} = route.params;
+
+  const handleCopyAddress = useCallback(async () => {
+    await Clipboard.setString(wallet.address);
+    alert('Address copied to clipboard');
+  }, [wallet.address]);
 
   return (
     <View style={styles.container}>
@@ -21,7 +27,7 @@ const WalletDetailScreen = ({route}) => {
           <Text style={styles.value}>{wallet.balance}</Text>
         </View>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={handleCopyAddress}>
           <Text style={styles.buttonText}>Copy Address</Text>
         </TouchableOpacity>
       </View>
